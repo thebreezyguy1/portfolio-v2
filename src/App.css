@@ -11,6 +11,10 @@
   padding: 20px;
 }
 
+section {
+  margin-bottom: 60px;
+}
+
 /******************** HEADER *********************/
 .header {
   display: flex;
@@ -113,4 +117,16 @@ button {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.achievements div {
+  flex: 1 1 calc(50% - 20px);
+  box-sizing: border-box;
+  text-align: center;
 }

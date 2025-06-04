@@ -22,7 +22,7 @@ function App() {
   return (
     <div className={`main ` + (theme === "light" ? `light` : `dark`)}>
       <div className="main-inner-container">
-        <section className="header">
+        <div className="header">
           <img className="logo" src={logo} alt="" />
           <div style={{ display: "flex", alignItems: "center" }}>
             <img
@@ -41,7 +41,7 @@ function App() {
               </ul>
             )}
           </div>
-        </section>
+        </div>
         <section id="intro">
           <img className="main-img" src={dorian} alt="" />
           <h1>
@@ -76,6 +76,64 @@ function App() {
             Black Engineers and ColorStack, and I’ve earned multiple honors
             including back-to-back President’s List recognition.
           </p>
+          <div className="achievements">
+            <div className="achievement">
+              <h3>4+</h3>
+              <p>Coding Expertise</p>
+            </div>
+            <div className="achievement">
+              <h3>🇨🇲</h3>
+              <p>Nationality</p>
+            </div>
+            <div className="achievement">
+              <h3>15+</h3>
+              <p>Programming Languages</p>
+            </div>
+            <div className="achievement">
+              <h3>French</h3>
+              <p>Languages</p>
+            </div>
+          </div>
+        </section>
+        <section id="qualifications">
+          <h1>Qualifications</h1>
+          <button>Experience</button>
+          <button>Education</button>
+          <button>Skills</button>
+          <div className="experiences">
+            <div className="experience">
+              <img className="company-logo" src="" alt="" />
+              <p>August 2024 - May 2025</p>
+              <h3>Teaching Lab Assistant</h3>
+              <p>Kennesaw State University</p>
+            </div>
+            <div className="experience">
+              <img className="company-logo" src="" alt="" />
+              <p>May 2023 - August 2023</p>
+              <h3>Software Developer Intern</h3>
+              <p>Afriland First Bank</p>
+            </div>
+            <div className="experience">
+              <img className="company-logo" src="" alt="" />
+              <p>June 2022 - August 2022</p>
+              <h3>Software Engineer Intern</h3>
+              <p>MK World Business</p>
+            </div>
+          </div>
+          <div className="education">
+            <div className="school">
+              <img className="company-logo" src="" alt="" />
+              <p>Kennesaw State University</p>
+              <h3>Bachelor of Science - Computer Science</h3>
+              <p>January 2021 - May 2025</p>
+            </div>
+            <div className="school">
+              <img className="company-logo" src="" alt="" />
+              <p>CodePath</p>
+              <h3>Technical Interview Prep</h3>
+              <p>June 2024 - August 2024</p>
+            </div>
+          </div>
         </section>
       </div>
     </div>
