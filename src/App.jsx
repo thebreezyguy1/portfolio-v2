@@ -2,7 +2,7 @@ import { useState } from "react";
 import logo from "./assets/logo.png";
 import moon from "./assets/moon.png";
 import hamburger from "./assets/hamburger.png";
-import dorian from "./assets/dorian.jpg";
+import dorian from "./assets/dorian.JPG";
 import resume from "./assets/Dorian-Taponzing-Resume.pdf";
 import "./App.css";
 
