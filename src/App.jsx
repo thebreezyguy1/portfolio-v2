@@ -1,15 +1,18 @@
 import { useState } from "react";
 import logo from "./assets/logo.png";
-import sun from "./assets/sun.png";
 import moon from "./assets/moon.png";
 import hamburger from "./assets/hamburger.png";
 import dorian from "./assets/dorian.jpg";
+import resume from "./assets/Dorian-Taponzing-Resume.pdf";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
   const [theme, setTheme] = useState("light");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showExperience, setShowExperience] = useState(true);
+  const [showEducation, setShowEducation] = useState(false);
+  const [showSkills, setShowSkills] = useState(false);
 
   const handleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
@@ -17,6 +20,22 @@ function App() {
 
   const toggleMenu = () => {
     setMenuOpen((prevMenuOpen) => !prevMenuOpen);
+  };
+
+  const handleDisplay = (content) => {
+    if (content === "experience") {
+      setShowExperience(true);
+      setShowEducation(false);
+      setShowSkills(false);
+    } else if (content === "education") {
+      setShowEducation(true);
+      setShowExperience(false);
+      setShowSkills(false);
+    } else {
+      setShowSkills(true);
+      setShowEducation(false);
+      setShowExperience(false);
+    }
   };
 
   return (
@@ -28,7 +47,11 @@ function App() {
             <img
               onClick={handleTheme}
               className="sun-icon"
-              src={theme === "light" ? sun : moon}
+              src={
+                theme === "light"
+                  ? "https://img.icons8.com/material-rounded/24/f1c40f/sun--v1.png"
+                  : "https://img.icons8.com/ios-glyphs/24/f1c40f/moon-symbol.png"
+              }
               alt=""
             />
             <img className="hamburger-icon" src={hamburger} alt="" />
@@ -55,9 +78,20 @@ function App() {
             achievements that reflect my journey in tech.
           </p>
           <div className="about-buttons-container">
-            <button style={{ backgroundColor: "#80D8C3", marginRight: "15px" }}>
-              Download my resume
-            </button>
+            <a
+              href={resume}
+              download={"Dorian-Taponzing-Donfack-Resume.pdf"}
+              className="resume-button"
+            >
+              Download my resume{" "}
+              <img
+                id="download-icon"
+                width="48"
+                height="48"
+                src="https://img.icons8.com/fluency-systems-regular/48/download--v1.png"
+                alt="download--v1"
+              />
+            </a>
             <button style={{ border: "2px solid #000" }}>Connect</button>
           </div>
         </section>
@@ -97,42 +131,164 @@ function App() {
         </section>
         <section id="qualifications">
           <h1>Qualifications</h1>
-          <button>Experience</button>
-          <button>Education</button>
-          <button>Skills</button>
-          <div className="experiences">
-            <div className="experience">
-              <img className="company-logo" src="" alt="" />
-              <p>August 2024 - May 2025</p>
-              <h3>Teaching Lab Assistant</h3>
-              <p>Kennesaw State University</p>
+          <button onClick={() => handleDisplay("experience")}>
+            Experience
+          </button>
+          <button onClick={() => handleDisplay("education")}>Education</button>
+          <button onClick={() => handleDisplay("skills")}>Skills</button>
+          {showExperience && (
+            <div className="experiences">
+              <div className="experience">
+                <img className="company-logo" src="" alt="" />
+                <p>August 2024 - May 2025</p>
+                <h3>Teaching Lab Assistant</h3>
+                <p>Kennesaw State University</p>
+              </div>
+              <div className="experience">
+                <img className="company-logo" src="" alt="" />
+                <p>May 2023 - August 2023</p>
+                <h3>Software Developer Intern</h3>
+                <p>Afriland First Bank</p>
+              </div>
+              <div className="experience">
+                <img className="company-logo" src="" alt="" />
+                <p>June 2022 - August 2022</p>
+                <h3>Software Engineer Intern</h3>
+                <p>MK World Business</p>
+              </div>
             </div>
-            <div className="experience">
-              <img className="company-logo" src="" alt="" />
-              <p>May 2023 - August 2023</p>
-              <h3>Software Developer Intern</h3>
-              <p>Afriland First Bank</p>
+          )}
+          {showEducation && (
+            <div className="education">
+              <div className="school">
+                <img className="company-logo" src="" alt="" />
+                <p>Kennesaw State University</p>
+                <h3>Bachelor of Science - Computer Science</h3>
+                <p>January 2021 - May 2025</p>
+              </div>
+              <div className="school">
+                <img className="company-logo" src="" alt="" />
+                <p>CodePath</p>
+                <h3>Technical Interview Prep</h3>
+                <p>June 2024 - August 2024</p>
+              </div>
             </div>
-            <div className="experience">
-              <img className="company-logo" src="" alt="" />
-              <p>June 2022 - August 2022</p>
-              <h3>Software Engineer Intern</h3>
-              <p>MK World Business</p>
+          )}
+          {showSkills && (
+            <div className="skills">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original-wordmark.svg" />
+
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" />
+            </div>
+          )}
+        </section>
+        <section>
+          <div className="projects">
+            <h1>Projects</h1>
+            <div className="project">
+              <h3>Redis Server Project</h3>
+              <img src="" alt="" />
+              <div className="project-desc">
+                <p>
+                  Built a lightweight Redis-inspired in-memory key-value store
+                  using Java, focused on performance and scalability. The system
+                  uses a HashMap for fast data access and is backed by a
+                  multithreaded socket-based server. With ExecutorService and
+                  ThreadPoolExecutor, the server supports high concurrency and
+                  processes thousands of client commands per second with minimal
+                  resource contention. Ideal for educational purposes and
+                  demonstrating core concepts in systems programming, concurrent
+                  processing, and network communication.
+                </p>
+              </div>
+            </div>
+            <div className="project">
+              <h3>Campus AI Companion</h3>
+              <img src="" alt="" />
+              <div className="project-desc">
+                <p>
+                  Developed Campus AI Companion, a full-stack mobile app
+                  designed to support students with personalized academic
+                  guidance. Built with React Native and Node.js, the app
+                  integrates Firebase for secure authentication and real-time
+                  updates. By leveraging OpenAI's API, it delivers AI-powered
+                  recommendations for study schedules, course planning, and
+                  career paths. The app features a responsive, cross-platform UI
+                  and demonstrated a measurable increase in user engagement and
+                  retention during pilot testing.
+                </p>
+              </div>
+            </div>
+            <div className="project">
+              <h3>Food Ordering System App</h3>
+              <img src="" alt="" />
+              <div className="project-desc">
+                <p>
+                  Built a desktop-based Food Ordering System using Java, JavaFX,
+                  and MySQL, structured around the MVC architecture to promote
+                  modularity and scalability. The system enables users to browse
+                  menus, customize orders, and process transactions. A
+                  well-designed relational database ensures efficient data
+                  handling and fast queries. Applied Agile practices such as
+                  sprint planning and iteration cycles, which improved team
+                  productivity and delivery speed.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="education">
-            <div className="school">
-              <img className="company-logo" src="" alt="" />
-              <p>Kennesaw State University</p>
-              <h3>Bachelor of Science - Computer Science</h3>
-              <p>January 2021 - May 2025</p>
-            </div>
-            <div className="school">
-              <img className="company-logo" src="" alt="" />
-              <p>CodePath</p>
-              <h3>Technical Interview Prep</h3>
-              <p>June 2024 - August 2024</p>
-            </div>
+        </section>
+        <section>
+          <div className="contact">
+            <h1>Let's connect</h1>
+            <form action="">
+              <label htmlFor="">Name</label>
+              <input type="text" placeholder="Enter your name" />
+              <label htmlFor="">Email</label>
+              <input type="text" placeholder="Enter your email" />
+              <label htmlFor="">Write your message here</label>
+              <textarea
+                name=""
+                id=""
+                placeholder="Write your message here"
+              ></textarea>
+              <button>Submit now</button>
+            </form>
+          </div>
+        </section>
+        <section>
+          <div className="footer">
+            <div className="proverb"></div>
+            <p>Term of Services</p>
+            <p>Privacy Policy</p>
+            <p>&copy; Dorian Taponzing Donfack. All rights reserved.</p>
           </div>
         </section>
       </div>
