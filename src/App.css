@@ -116,11 +116,16 @@ button {
   margin-bottom: 10px;
 }
 
-#intro h1 span {
+h1,
+.data {
   background: linear-gradient(267deg, #80d8c3 0.36%, #3498db 102.06%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.achievement p {
+  font-weight: 600;
 }
 
 .achievements {
@@ -168,4 +173,30 @@ textarea {
 .resume-button img {
   width: 24px; /* Adjust the size of the image */
   height: 24px;
+}
+
+.qualification-btns button {
+  margin-right: 5px;
+  background-color: gainsboro;
+  padding: 10px;
+}
+
+button#active {
+  background-color: #80d8c3;
+}
+
+.experience,
+.school {
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px #ccc;
+  padding: 10px;
+}
+
+.skills {
+  margin-top: 20px;
+}
+
+.skills img {
+  margin-right: 10px;
 }
