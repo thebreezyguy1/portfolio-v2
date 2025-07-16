@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import logo from "./assets/logo.png";
 import moon from "./assets/moon.png";
 import hamburger from "./assets/hamburger.png";
@@ -14,12 +14,18 @@ function App() {
   const [showEducation, setShowEducation] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
 
-  const handleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  const menuRef = useRef();
+
+  const openMenu = () => {
+    menuRef.current.style.right = "0";
   };
 
-  const toggleMenu = () => {
-    setMenuOpen((prevMenuOpen) => !prevMenuOpen);
+  const closeMenu = () => {
+    menuRef.current.style.right = "-100%";
+  };
+
+  const handleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
   const handleDisplay = (content) => {
@@ -49,20 +55,31 @@ function App() {
               className="sun-icon"
               src={
                 theme === "light"
-                  ? "https://img.icons8.com/material-rounded/24/f1c40f/sun--v1.png"
-                  : "https://img.icons8.com/ios-glyphs/24/f1c40f/moon-symbol.png"
+                  ? "https://img.icons8.com/material-rounded/40/f1c40f/sun--v1.png"
+                  : "https://img.icons8.com/ios-glyphs/40/f1c40f/moon-symbol.png"
               }
               alt=""
             />
-            <img className="hamburger-icon" src={hamburger} alt="" />
-            {menuOpen && (
-              <ul className="links">
-                <li>About Me</li>
-                <li>Resume</li>
-                <li>Work</li>
-                <li>Contact</li>
-              </ul>
-            )}
+            <img
+              onClick={openMenu}
+              className="nav-mob-open"
+              src={"https://img.icons8.com/ios-glyphs/40/f1c40f/hamburger.png"}
+              alt=""
+            />
+            <ul ref={menuRef} className="nav-menu">
+              <img
+                onClick={closeMenu}
+                className="nav-mob-close"
+                width="40"
+                height="40"
+                src="https://img.icons8.com/ios-filled/40/f1c40f/delete-sign--v1.png"
+                alt="delete-sign--v1"
+              />
+              <li>About Me</li>
+              <li>Resume</li>
+              <li>Work</li>
+              <li>Contact</li>
+            </ul>
           </div>
         </div>
         <section id="intro">
@@ -156,7 +173,7 @@ function App() {
               <div className="experience">
                 <img
                   className="company-logo"
-                  src={"src/assets/Kennesaw-State-Owls-Logo.png"}
+                  src={"src/assets/kennesaw.png"}
                   alt=""
                 />
                 <p>August 2024 - May 2025</p>
@@ -190,7 +207,7 @@ function App() {
               <div className="school">
                 <img
                   className="company-logo"
-                  src={"src/assets/Kennesaw-State-Owls-Logo.png"}
+                  src={"src/assets/kennesaw.png"}
                   alt=""
                 />
                 <p>Kennesaw State University</p>
@@ -250,7 +267,15 @@ function App() {
             <h1>Projects</h1>
             <div className="project">
               <h3>Redis Server Project</h3>
-              <img src="" alt="" />
+              <img
+                className="project-img"
+                src={"src/assets/redis.png"}
+                alt=""
+              />
+              <div className="project-buttons">
+                <button>View Project</button>
+                <button>See Demo</button>
+              </div>
               <div className="project-desc">
                 <p>
                   Built a lightweight Redis-inspired in-memory key-value store
@@ -267,7 +292,7 @@ function App() {
             </div>
             <div className="project">
               <h3>Campus AI Companion</h3>
-              <img src="" alt="" />
+              <img src={"src/assets/campus-ai.png"} alt="" />
               <div className="project-desc">
                 <p>
                   Developed Campus AI Companion, a full-stack mobile app
@@ -284,7 +309,7 @@ function App() {
             </div>
             <div className="project">
               <h3>Food Ordering System App</h3>
-              <img src="" alt="" />
+              <img src={"src/assets/food-ordering.jpg"} alt="" />
               <div className="project-desc">
                 <p>
                   Built a desktop-based Food Ordering System using Java, JavaFX,
@@ -303,18 +328,19 @@ function App() {
         <section>
           <div className="contact">
             <h1>Let's connect</h1>
-            <form action="">
+            <form className="contact-form" action="">
               <label htmlFor="">Name</label>
               <input type="text" placeholder="Enter your name" />
               <label htmlFor="">Email</label>
               <input type="text" placeholder="Enter your email" />
               <label htmlFor="">Write your message here</label>
               <textarea
-                name=""
+                name="message"
+                rows={8}
                 id=""
                 placeholder="Write your message here"
               ></textarea>
-              <button>Submit now</button>
+              <button className="submit-btn">Submit now</button>
             </form>
           </div>
         </section>
@@ -323,7 +349,9 @@ function App() {
             <div className="proverb"></div>
             <p>Term of Services</p>
             <p>Privacy Policy</p>
-            <p>&copy; Dorian Taponzing Donfack. All rights reserved.</p>
+            <p className="copyright">
+              &copy; Dorian Taponzing Donfack. All rights reserved.
+            </p>
           </div>
         </section>
       </div>
