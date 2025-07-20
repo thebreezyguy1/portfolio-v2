@@ -3,6 +3,7 @@ import logo from "./assets/logo.png";
 import moon from "./assets/moon.png";
 import hamburger from "./assets/hamburger.png";
 import dorian from "./assets/dorian.JPG";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import resume from "./assets/Dorian-Taponzing-Resume.pdf";
 import "./App.css";
 
@@ -44,6 +45,27 @@ function App() {
     }
   };
 
+  const toggleContainerVisibility = () => {
+    const container = document.querySelector(".sun-icon");
+    const hamburger = document.querySelector(".nav-mob-open");
+
+    if (window.scrollY > 0) {
+      container.classList.add("hidden");
+      hamburger.setAttribute(
+        "src",
+        "https://img.icons8.com/ios-glyphs/40/c2c2c2/hamburger.png"
+      );
+    } else {
+      container.classList.remove("hidden");
+      hamburger.setAttribute(
+        "src",
+        "https://img.icons8.com/ios-glyphs/40/f1c40f/hamburger.png"
+      );
+    }
+  };
+
+  window.addEventListener("scroll", toggleContainerVisibility);
+
   return (
     <div className={`main ` + (theme === "light" ? `light` : `dark`)}>
       <div className="main-inner-container">
@@ -70,15 +92,34 @@ function App() {
               <img
                 onClick={closeMenu}
                 className="nav-mob-close"
-                width="40"
-                height="40"
-                src="https://img.icons8.com/ios-filled/40/f1c40f/delete-sign--v1.png"
+                width="30"
+                height="30"
+                src="https://img.icons8.com/ios-filled/30/ffffff/delete-sign--v1.png"
                 alt="delete-sign--v1"
               />
-              <li>About Me</li>
-              <li>Resume</li>
-              <li>Work</li>
-              <li>Contact</li>
+              <li>
+                <AnchorLink href="#intro">Home</AnchorLink>
+              </li>
+              <li>
+                <AnchorLink offset={50} href="#about">
+                  About Me
+                </AnchorLink>
+              </li>
+              <li>
+                <AnchorLink offset={50} href="#achievements">
+                  Achievements
+                </AnchorLink>
+              </li>
+              <li>
+                <AnchorLink offset={50} href="#qualifications">
+                  Qualifications
+                </AnchorLink>
+              </li>
+              <li>
+                <AnchorLink offset={50} href="#contact">
+                  Contacts
+                </AnchorLink>
+              </li>
             </ul>
           </div>
         </div>
