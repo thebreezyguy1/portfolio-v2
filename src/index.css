@@ -4,9 +4,12 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: #213547;
-  background-color: #242424;
+  --base-color: #fff;
+  --base-variant: #3498db;
+  --text-color: #213547;
+  --secondary-text: #a0a0a0;
+  --primary-color: #80d8c3;
+  --accent-color: #f1c40f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,19 +17,43 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.darkmode {
+  --base-color: #0b192c;
+  --base-variant: ;
+  --text-color: #fff;
+  --secondary-text: #000;
+  --primary-color: #80d8c3;
+  --accent-color: ;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  text-decoration: none;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
 }
 
 p {
@@ -36,6 +63,16 @@ p {
 h1 {
   font-size: 30px;
   line-height: 1.1;
+}
+
+.resume-button {
+  background-color: var(--primary-color);
+}
+
+.connect-btn {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
 }
 
 button {
@@ -49,27 +86,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 img {
   width: 60px;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

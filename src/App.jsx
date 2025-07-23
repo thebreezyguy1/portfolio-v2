@@ -27,6 +27,11 @@ function App() {
 
   const handleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    if (theme === "light") {
+      document.body.classList.add("darkmode");
+    } else {
+      document.body.classList.remove("darkmode");
+    }
   };
 
   const handleDisplay = (content) => {
@@ -98,26 +103,28 @@ function App() {
                 alt="delete-sign--v1"
               />
               <li>
-                <AnchorLink href="#intro">Home</AnchorLink>
+                <AnchorLink href="#intro">
+                  <p>Home</p>
+                </AnchorLink>
               </li>
               <li>
                 <AnchorLink offset={50} href="#about">
-                  About Me
+                  <p>About Me</p>
                 </AnchorLink>
               </li>
               <li>
                 <AnchorLink offset={50} href="#achievements">
-                  Achievements
+                  <p>Achievements</p>
                 </AnchorLink>
               </li>
               <li>
                 <AnchorLink offset={50} href="#qualifications">
-                  Qualifications
+                  <p>Qualifications</p>
                 </AnchorLink>
               </li>
               <li>
-                <AnchorLink offset={50} href="#contact">
-                  Contacts
+                <AnchorLink offset={50} href="#contacts">
+                  <p>Contacts</p>
                 </AnchorLink>
               </li>
             </ul>
@@ -150,11 +157,13 @@ function App() {
                 alt="download--v1"
               />
             </a>
-            <button style={{ border: "2px solid #000" }}>Connect</button>
+            <AnchorLink className="connect-btn" offset={50} href="#contacts">
+              Connect
+            </AnchorLink>
           </div>
         </section>
         <section id="about">
-          <h1>About Me</h1>
+          <h1 className="section-title">About Me</h1>
           <p>
             I'm a curious and driven Computer Science student, graduating in May
             2025, with a strong foundation in software engineering, distributed
@@ -168,7 +177,7 @@ function App() {
             Black Engineers and ColorStack, and I’ve earned multiple honors
             including back-to-back President’s List recognition.
           </p>
-          <div className="achievements">
+          <div id="achievements">
             <div className="achievement">
               <h3 className="data">4+</h3>
               <p>Coding Expertise</p>
@@ -188,7 +197,7 @@ function App() {
           </div>
         </section>
         <section id="qualifications">
-          <h1>Qualifications</h1>
+          <h1 className="section-title">Qualifications</h1>
           <div className="qualification-btns">
             <button
               id={showExperience ? "active" : ""}
@@ -305,9 +314,9 @@ function App() {
         </section>
         <section>
           <div className="projects">
-            <h1>Projects</h1>
+            <h1 className="section-title">Projects</h1>
             <div className="project">
-              <h3>Redis Server Project</h3>
+              <h3 className="project-name">Redis Server Project</h3>
               <img
                 className="project-img"
                 src={"src/assets/redis.png"}
@@ -332,7 +341,7 @@ function App() {
               </div>
             </div>
             <div className="project">
-              <h3>Campus AI Companion</h3>
+              <h3 className="project-name">Campus AI Companion</h3>
               <img src={"src/assets/campus-ai.png"} alt="" />
               <div className="project-desc">
                 <p>
@@ -349,7 +358,7 @@ function App() {
               </div>
             </div>
             <div className="project">
-              <h3>Food Ordering System App</h3>
+              <h3 className="project-name">Food Ordering System App</h3>
               <img src={"src/assets/food-ordering.jpg"} alt="" />
               <div className="project-desc">
                 <p>
@@ -366,9 +375,9 @@ function App() {
             </div>
           </div>
         </section>
-        <section>
+        <section id="contacts">
           <div className="contact">
-            <h1>Let's connect</h1>
+            <h1 className="section-title">Let's connect</h1>
             <form className="contact-form" action="">
               <label htmlFor="">Name</label>
               <input type="text" placeholder="Enter your name" />
@@ -385,7 +394,7 @@ function App() {
             </form>
           </div>
         </section>
-        <section>
+        <section id="footer">
           <div className="footer">
             <div className="proverb"></div>
             <p>Term of Services</p>
