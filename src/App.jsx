@@ -6,6 +6,7 @@ import dorian from "./assets/dorian.JPG";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import resume from "./assets/Dorian-Taponzing-Resume.pdf";
 import "./App.css";
+import projects_data from "./assets/projects_data";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -70,6 +71,25 @@ function App() {
   };
 
   window.addEventListener("scroll", toggleContainerVisibility);
+
+  const INITIAL_PROJECTS = 2;
+  const [visibleProjects, setVisibleProjects] = useState(INITIAL_PROJECTS);
+
+  const handleShowMore = () => {
+    setVisibleProjects((prevVisibleProjects) => prevVisibleProjects + 1);
+  };
+
+  const handleShowLess = () => {
+    setVisibleProjects(INITIAL_PROJECTS);
+  };
+
+  const handleMouseEnter = (index) => {
+    document.getElementById(`overlay-${index}`).classList.add("show");
+  };
+
+  const handleMouseLeave = (index) => {
+    document.getElementById(`overlay-${index}`).classList.remove("show");
+  };
 
   return (
     <div className={`main ` + (theme === "light" ? `light` : `dark`)}>
@@ -315,64 +335,51 @@ function App() {
         <section>
           <div className="projects">
             <h1 className="section-title">Projects</h1>
-            <div className="project">
-              <h3 className="project-name">Redis Server Project</h3>
-              <img
-                className="project-img"
-                src={"src/assets/redis.png"}
-                alt=""
-              />
-              <div className="project-buttons">
-                <button>View Project</button>
-                <button>See Demo</button>
-              </div>
-              <div className="project-desc">
-                <p>
-                  Built a lightweight Redis-inspired in-memory key-value store
-                  using Java, focused on performance and scalability. The system
-                  uses a HashMap for fast data access and is backed by a
-                  multithreaded socket-based server. With ExecutorService and
-                  ThreadPoolExecutor, the server supports high concurrency and
-                  processes thousands of client commands per second with minimal
-                  resource contention. Ideal for educational purposes and
-                  demonstrating core concepts in systems programming, concurrent
-                  processing, and network communication.
-                </p>
-              </div>
+            <div className="projects-container">
+              {projects_data.slice(0, visibleProjects).map((proj, index) => (
+                <div
+                  key={index}
+                  className="project"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
+                >
+                  <h3 className="project-title">{proj.proj_name}</h3>
+                  <div className="image-container">
+                    <img src={proj.proj_img} alt={proj.proj_name} />
+                    <div id={`overlay-${index}`} className="overlay">
+                      <a className="proj-buttons" href={proj.proj_github_link}>
+                        View Project
+                      </a>
+                      <a className="proj-buttons" href={proj.proj_demo_link}>
+                        See Demo
+                      </a>
+                    </div>
+                  </div>
+                  <p className="project-desc">{proj.proj_desc}</p>
+                  <p className="tech-task">{proj.proj_tech}</p>
+                </div>
+              ))}
             </div>
-            <div className="project">
-              <h3 className="project-name">Campus AI Companion</h3>
-              <img src={"src/assets/campus-ai.png"} alt="" />
-              <div className="project-desc">
-                <p>
-                  Developed Campus AI Companion, a full-stack mobile app
-                  designed to support students with personalized academic
-                  guidance. Built with React Native and Node.js, the app
-                  integrates Firebase for secure authentication and real-time
-                  updates. By leveraging OpenAI's API, it delivers AI-powered
-                  recommendations for study schedules, course planning, and
-                  career paths. The app features a responsive, cross-platform UI
-                  and demonstrated a measurable increase in user engagement and
-                  retention during pilot testing.
-                </p>
+          </div>
+          <div className="show-container">
+            {visibleProjects < projects_data.length && (
+              <div className="show-more-button" onClick={handleShowMore}>
+                <p>Show more</p>
+                <img
+                  src="https://img.icons8.com/ios-glyphs/30/long-arrow-right.png"
+                  alt="Show more"
+                />
               </div>
-            </div>
-            <div className="project">
-              <h3 className="project-name">Food Ordering System App</h3>
-              <img src={"src/assets/food-ordering.jpg"} alt="" />
-              <div className="project-desc">
-                <p>
-                  Built a desktop-based Food Ordering System using Java, JavaFX,
-                  and MySQL, structured around the MVC architecture to promote
-                  modularity and scalability. The system enables users to browse
-                  menus, customize orders, and process transactions. A
-                  well-designed relational database ensures efficient data
-                  handling and fast queries. Applied Agile practices such as
-                  sprint planning and iteration cycles, which improved team
-                  productivity and delivery speed.
-                </p>
+            )}
+            {visibleProjects > INITIAL_PROJECTS && (
+              <div className="show-less-button" onClick={handleShowLess}>
+                <p>Show less</p>
+                <img
+                  src="https://img.icons8.com/ios-glyphs/30/long-arrow-right.png"
+                  alt="Show less"
+                />
               </div>
-            </div>
+            )}
           </div>
         </section>
         <section id="contacts">
