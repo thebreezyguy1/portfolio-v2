@@ -168,7 +168,7 @@ function App() {
               download={"Dorian-Taponzing-Donfack-Resume.pdf"}
               className="resume-button"
             >
-              Download my resume{" "}
+              My resume{" "}
               <img
                 id="download-icon"
                 width="48"
@@ -180,6 +180,43 @@ function App() {
             <AnchorLink className="connect-btn" offset={50} href="#contacts">
               Connect
             </AnchorLink>
+          </div>
+          <div className="social-network-container">
+            <div className="social-network-inner-container">
+              <a
+                href="https://www.instagram.com/thebreezyguy/"
+                className="social-icon"
+              >
+                <img
+                  src="https://img.icons8.com/windows/40/instagram-new.png"
+                  alt="instagram"
+                />
+              </a>
+              <a href="https://x.com/thebreezyguy168" className="social-icon">
+                <img
+                  src="https://img.icons8.com/material-rounded/40/twitterx--v2.png"
+                  alt="twitter"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dorian-taponzing-donfack"
+                className="social-icon"
+              >
+                <img
+                  src="https://img.icons8.com/ios-glyphs/40/linkedin-2--v1.png"
+                  alt="linkedin"
+                />
+              </a>
+              <a
+                href="https://github.com/thebreezyguy1"
+                className="social-icon"
+              >
+                <img
+                  src="https://img.icons8.com/ios-glyphs/40/github.png"
+                  alt="github"
+                />
+              </a>
+            </div>
           </div>
         </section>
         <section id="about">
@@ -385,6 +422,34 @@ function App() {
         <section id="contacts">
           <div className="contact">
             <h1 className="section-title">Let's connect</h1>
+            <p>I am available for 2025 New Grade roles.</p>
+            <p>Connect with me through email or phone.</p>
+            <div className="contact-info-container">
+              <div className="contact-info">
+                <img
+                  src="https://img.icons8.com/material-rounded/30/new-post.png"
+                  alt="email"
+                />
+                <p>
+                  dtaponzi@students.kennesaw.edu | doriantaponzing@gmail.com
+                </p>
+              </div>
+              <div className="contact-info">
+                <img
+                  src="https://img.icons8.com/ios-glyphs/30/phone--v1.png"
+                  alt="phone"
+                />
+                <p>+1 470-439-9907</p>
+              </div>
+              <div className="contact-info">
+                <img
+                  src="https://img.icons8.com/material-rounded/30/marker.png"
+                  alt="location"
+                />
+                <p>Lilburn, Georgia, USA</p>
+              </div>
+            </div>
+
             <form className="contact-form" action="">
               <label htmlFor="">Name</label>
               <input type="text" placeholder="Enter your name" />
@@ -403,7 +468,13 @@ function App() {
         </section>
         <section id="footer">
           <div className="footer">
-            <div className="proverb"></div>
+            <div className="proverb">
+              <p className="proverb-title">Proverbs 16:3</p>
+              <p>
+                "Commit your work to the Lord, and your plans will be
+                established."
+              </p>
+            </div>
             <p>Term of Services</p>
             <p>Privacy Policy</p>
             <p className="copyright">
