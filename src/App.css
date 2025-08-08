@@ -211,10 +211,16 @@ button#active {
 
 .experience,
 .school {
-  margin-top: 20px;
   border-radius: 10px;
   box-shadow: 0 0 5px 2px #ccc;
   padding: 20px 20px;
+}
+
+.experiences,
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .company-logo {
@@ -223,6 +229,10 @@ button#active {
 
 .skills {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 20px;
 }
 
 .skills img {

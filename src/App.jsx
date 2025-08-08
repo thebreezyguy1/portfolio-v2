@@ -15,6 +15,7 @@ function App() {
   const [showExperience, setShowExperience] = useState(true);
   const [showEducation, setShowEducation] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
+  const [iconColor, setIconColor] = useState("213547");
 
   const menuRef = useRef();
 
@@ -30,8 +31,10 @@ function App() {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
     if (theme === "light") {
       document.body.classList.add("darkmode");
+      setIconColor("ffffff");
     } else {
       document.body.classList.remove("darkmode");
+      setIconColor("213547");
     }
   };
 
@@ -188,13 +191,13 @@ function App() {
                 className="social-icon"
               >
                 <img
-                  src="https://img.icons8.com/windows/40/instagram-new.png"
+                  src={`https://img.icons8.com/windows/${iconColor}/40/instagram-new.png`}
                   alt="instagram"
                 />
               </a>
               <a href="https://x.com/thebreezyguy168" className="social-icon">
                 <img
-                  src="https://img.icons8.com/material-rounded/40/twitterx--v2.png"
+                  src={`https://img.icons8.com/material-rounded/${iconColor}/40/twitterx--v2.png`}
                   alt="twitter"
                 />
               </a>
@@ -203,7 +206,7 @@ function App() {
                 className="social-icon"
               >
                 <img
-                  src="https://img.icons8.com/ios-glyphs/40/linkedin-2--v1.png"
+                  src={`https://img.icons8.com/ios-glyphs/40/${iconColor}/linkedin-2--v1.png`}
                   alt="linkedin"
                 />
               </a>
@@ -212,7 +215,7 @@ function App() {
                 className="social-icon"
               >
                 <img
-                  src="https://img.icons8.com/ios-glyphs/40/github.png"
+                  src={`https://img.icons8.com/ios-glyphs/${iconColor}/40/github.png`}
                   alt="github"
                 />
               </a>
