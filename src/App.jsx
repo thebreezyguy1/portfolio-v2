@@ -16,6 +16,7 @@ function App() {
   const [showEducation, setShowEducation] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
   const [iconColor, setIconColor] = useState("213547");
+  const [contactIconColor, setContactIconColor] = useState("213547");
 
   const menuRef = useRef();
 
@@ -32,9 +33,11 @@ function App() {
     if (theme === "light") {
       document.body.classList.add("darkmode");
       setIconColor("ffffff");
+      setContactIconColor("a0a0a0");
     } else {
       document.body.classList.remove("darkmode");
       setIconColor("213547");
+      setContactIconColor("213547");
     }
   };
 
@@ -406,7 +409,7 @@ function App() {
               <div className="show-more-button" onClick={handleShowMore}>
                 <p>Show more</p>
                 <img
-                  src="https://img.icons8.com/ios-glyphs/30/long-arrow-right.png"
+                  src={`https://img.icons8.com/ios-glyphs/30/${iconColor}/long-arrow-right.png`}
                   alt="Show more"
                 />
               </div>
@@ -415,7 +418,7 @@ function App() {
               <div className="show-less-button" onClick={handleShowLess}>
                 <p>Show less</p>
                 <img
-                  src="https://img.icons8.com/ios-glyphs/30/long-arrow-right.png"
+                  src={`https://img.icons8.com/ios-glyphs/30/${iconColor}/long-arrow-right.png`}
                   alt="Show less"
                 />
               </div>
@@ -430,7 +433,7 @@ function App() {
             <div className="contact-info-container">
               <div className="contact-info">
                 <img
-                  src="https://img.icons8.com/material-rounded/30/new-post.png"
+                  src={`https://img.icons8.com/material-rounded/30/${contactIconColor}/new-post.png`}
                   alt="email"
                 />
                 <p>
@@ -439,14 +442,14 @@ function App() {
               </div>
               <div className="contact-info">
                 <img
-                  src="https://img.icons8.com/ios-glyphs/30/phone--v1.png"
+                  src={`https://img.icons8.com/ios-glyphs/30/${contactIconColor}/phone--v1.png`}
                   alt="phone"
                 />
                 <p>+1 470-439-9907</p>
               </div>
               <div className="contact-info">
                 <img
-                  src="https://img.icons8.com/material-rounded/30/marker.png"
+                  src={`https://img.icons8.com/material-rounded/30/${contactIconColor}/marker.png`}
                   alt="location"
                 />
                 <p>Lilburn, Georgia, USA</p>

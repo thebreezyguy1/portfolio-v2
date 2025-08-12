@@ -203,6 +203,7 @@ label {
   margin-right: 5px;
   background-color: gainsboro;
   padding: 10px;
+  margin-bottom: 30px;
 }
 
 button#active {
@@ -340,7 +341,6 @@ button#active {
   display: flex;
   border-radius: 50px;
   gap: 15px;
-  border: 2px solid #000;
   align-items: center;
   padding: 20px;
   font-size: 20px;
@@ -457,7 +457,7 @@ input {
   font-size: 16px;
   margin-bottom: 20px;
   border-radius: 5px;
-  background-color: #0b192c;
+  background-color: #152441;
   color: #a0a0a0;
   font-family: outfit;
   border: none;
@@ -472,7 +472,7 @@ textarea {
   margin-bottom: 20px;
   border: none;
   color: #a0a0a0;
-  background-color: #0b192c;
+  background-color: #152441;
   border-radius: 5px;
   font-family: outfit;
   font-size: 16px;
@@ -483,9 +483,16 @@ textarea {
   background-color: #80d8c3;
   border: none;
   margin-top: 10px;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(267deg, #80d8c3 0.36%, #3498db 102.06%);
 }
 
 /****************** FOOTER *****************/
+#footer {
+  margin-bottom: 20px;
+}
 .footer {
   font-weight: 500;
 }
