@@ -1,0 +1,114 @@
+#intro,
+.about-buttons-container,
+.social-network-inner-container,
+.resume-button {
+  display: flex;
+}
+
+#intro,
+.about-buttons-container,
+.resume-button {
+  justify-content: center;
+}
+
+#intro,
+.about-buttons-container,
+.resume-button {
+  align-items: center;
+}
+
+.main-img,
+#download-icon {
+  display: inline;
+}
+
+.resume-button,
+.connect-btn {
+  border-radius: 30px;
+  padding: 15px;
+}
+
+@keyframes profile__animate {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+#intro {
+  flex-direction: column;
+  text-align: center;
+}
+
+.main-img {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 150px;
+  box-shadow: 0 0 0 9px #80d8c3;
+  animation: profile__animate 8s ease-in-out infinite;
+}
+
+.about-buttons-container {
+  margin-top: 10px;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.connect-btn,
+.resume-button {
+  flex: 1;
+}
+
+#intro h1,
+.text-intro {
+  margin: 0 auto 20px;
+}
+
+#intro h1 {
+  margin-bottom: 10px;
+  width: 90%;
+  font-size: 35px;
+}
+
+.text-intro {
+  line-height: 26px;
+}
+
+.social-network-container {
+  padding: 20px;
+}
+
+.social-network-inner-container {
+  gap: 30px;
+}
+
+.social-icon img {
+  width: 40px;
+}
+
+.achievement p {
+  font-weight: 600;
+}
+
+label {
+  font-weight: 700;
+}
+
+.resume-button {
+  gap: 8px; /* Add spacing between the text and the image */
+  border: 2px solid #80d8c3;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+.resume-button img {
+  width: 24px; /* Adjust the size of the image */
+  height: 24px;
+}

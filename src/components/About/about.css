@@ -1,0 +1,19 @@
+#achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.achievement {
+  text-align: center;
+  flex: 1 1 calc(50% - 20px);
+  box-sizing: border-box;
+}
+
+.data {
+  background: linear-gradient(267deg, #80d8c3 0.36%, #3498db 102.06%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,146 @@
+.project,
+.image-container {
+  position: relative;
+}
+
+.project,
+.overlay {
+  overflow: hidden;
+}
+
+.project-title,
+.image-container {
+  margin-bottom: 20px;
+}
+
+.project:hover .project-buttons,
+.overlay,
+.show-more-button,
+.show-less-button {
+  display: flex;
+}
+
+.proj-buttons,
+.show-more-button,
+.show-less-button {
+  border-radius: 50px;
+}
+
+.proj-buttons,
+.overlay {
+  color: #fff;
+}
+
+.projects-container img,
+.overlay {
+  box-sizing: border-box;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.projects-container img,
+.image-container,
+.overlay {
+  width: 100%;
+}
+
+.projects-container img,
+.projects-container img:hover,
+.overlay {
+  border-radius: 20px;
+}
+
+.projects-container img,
+.show-more-button,
+.show-less-button {
+  cursor: pointer;
+}
+
+.projects-container img,
+.projects-container img:hover {
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.overlay,
+.show-more-button,
+.show-less-button {
+  padding: 20px;
+  align-items: center;
+}
+
+.show-more-button,
+.show-less-button {
+  gap: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 80px;
+  transition: 0.6s;
+  width: fit-content;
+}
+
+.show-more-button img,
+.show-less-button img {
+  width: 30px;
+}
+
+.project {
+  margin-bottom: 50px;
+}
+
+.project-name {
+  margin-bottom: 15px;
+}
+
+.project-buttons button:hover {
+  background-color: #80d8c3;
+}
+
+.projects {
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  transition: all 0.4s ease;
+}
+
+.proj-buttons {
+  padding: 10px;
+  border: 1px solid #3498db;
+  background-color: #3498db;
+}
+
+.projects-container img {
+  height: 200px;
+}
+
+.projects-container img:hover {
+  transform: scale(1.1);
+  border: 3px solid #80d8c3;
+}
+
+.image-container {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background-color: #213547;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  max-height: 100%;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}

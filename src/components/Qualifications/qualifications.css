@@ -1,0 +1,44 @@
+.experiences,
+.education,
+.skills {
+  display: flex;
+}
+
+.experience,
+.school {
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px #ccc;
+  padding: 20px 20px;
+}
+
+.experiences,
+.education {
+  flex-direction: column;
+  gap: 30px;
+}
+
+.qualification-btns button {
+  margin-right: 5px;
+  background-color: gainsboro;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+button#active {
+  background-color: #80d8c3;
+}
+
+.company-logo {
+  width: 80px;
+}
+
+.skills {
+  margin-top: 20px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.skills img {
+  margin-right: 10px;
+}
