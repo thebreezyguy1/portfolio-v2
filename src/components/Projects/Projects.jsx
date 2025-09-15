@@ -23,7 +23,7 @@ const Projects = ({ iconColor }) => {
   };
 
   return (
-    <section>
+    <section id="projects">
       <div className="projects">
         <h1 className="section-title">Projects</h1>
         <div className="projects-container">

@@ -10,11 +10,15 @@ const Footer = () => {
             "Commit your work to the Lord, and your plans will be established."
           </p>
         </div>
-        <p>Term of Services</p>
-        <p>Privacy Policy</p>
-        <p className="copyright">
-          &copy; Dorian Taponzing Donfack. All rights reserved.
-        </p>
+        <div className="footer-text-container">
+          <div className="footer-links">
+            <p>Term of Services</p>
+            <p>Privacy Policy</p>
+          </div>
+          <p className="copyright">
+            &copy; Dorian Taponzing Donfack. All rights reserved.
+          </p>
+        </div>
       </div>
     </section>
   );

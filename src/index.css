@@ -102,3 +102,11 @@ button {
 img {
   width: 60px;
 }
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 80px;
+    padding: 0;
+    text-align: center;
+  }
+}

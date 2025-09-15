@@ -141,6 +141,38 @@
   max-height: 100%;
 }
 
+.projects-container img {
+  height: 100%;
+}
+
 .image-container:hover .overlay {
   opacity: 1;
+}
+
+.tech-task {
+  background: linear-gradient(267deg, #80d8c3 0.36%, #3498db 102.06%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) {
+  #projects {
+    margin: 50px 70px;
+  }
+
+  .projects-container img {
+    height: 100%;
+  }
+
+  .project-desc,
+  .tech-task {
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  .tech-task {
+    margin-top: 10px;
+    font-weight: 600;
+  }
 }

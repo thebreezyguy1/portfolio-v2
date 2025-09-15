@@ -89,7 +89,7 @@
 }
 
 .nav-menu li p {
-  color: #fff !important;
+  color: #fff;
 }
 
 .nav-menu li a:hover:after {
@@ -132,5 +132,43 @@
     border: 1px solid #ccc;
     padding: 10px;
     z-index: 1000;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-mob-open,
+  .nav-mob-close {
+    display: none;
+  }
+
+  .nav-menu {
+    position: relative;
+    align-items: center;
+    list-style: none;
+    right: 0;
+    background-color: transparent;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .nav-menu li {
+    padding-left: 10px;
+  }
+
+  .nav-menu li p {
+    font-size: 20px;
+    color: var(--text-color);
+  }
+
+  .sun-icon {
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    width: 64px;
+    z-index: 2;
+  }
+
+  .logo {
+    width: 120px;
   }
 }

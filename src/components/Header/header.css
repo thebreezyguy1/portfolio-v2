@@ -112,3 +112,52 @@ label {
   width: 24px; /* Adjust the size of the image */
   height: 24px;
 }
+
+@media (min-width: 768px) {
+  .main-img {
+    width: 200px;
+  }
+
+  #intro {
+    position: relative;
+  }
+
+  #intro h1 {
+    font-size: 50px;
+  }
+
+  .text-intro {
+    font-size: 22px;
+    line-height: 36px;
+    width: 80%;
+  }
+
+  .about-buttons-container {
+    font-size: 22px;
+    gap: 25px;
+    width: fit-content;
+  }
+
+  .resume-button,
+  .connect-btn {
+    padding: 20px 60px;
+    font-size: 20px;
+    border-radius: 50px;
+  }
+
+  .resume-button {
+    white-space: nowrap;
+  }
+
+  .social-network-container {
+    position: absolute;
+    bottom: 70px;
+    margin-right: 20px;
+    padding: 20px;
+    right: -20px;
+  }
+
+  .social-network-inner-container {
+    flex-direction: column;
+  }
+}

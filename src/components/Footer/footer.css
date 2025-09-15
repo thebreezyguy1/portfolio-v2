@@ -23,3 +23,24 @@
 .copyright {
   margin-top: 50px;
 }
+
+@media (min-width: 768px) {
+  #footer {
+    margin: 50px 70px;
+  }
+
+  .footer p {
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  .footer-text-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  p.copyright {
+    margin: 0;
+  }
+}

@@ -65,8 +65,8 @@ const NavBar = ({ setIconColor, setContactIconColor }) => {
           className="sun-icon"
           src={
             theme === "light"
-              ? "https://img.icons8.com/material-rounded/40/f1c40f/sun--v1.png"
-              : "https://img.icons8.com/ios-glyphs/40/f1c40f/moon-symbol.png"
+              ? "https://img.icons8.com/material-rounded/100/f1c40f/sun--v1.png"
+              : "https://img.icons8.com/ios-glyphs/100/f1c40f/moon-symbol.png"
           }
           alt={
             theme === "light" ? "Switch to dark mode" : "Switch to light mode"

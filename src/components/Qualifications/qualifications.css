@@ -42,3 +42,19 @@ button#active {
 .skills img {
   margin-right: 10px;
 }
+
+@media (min-width: 768px) {
+  #qualifications {
+    margin: 50px 70px;
+  }
+
+  .qualification-btns {
+    display: flex;
+    justify-content: center;
+  }
+
+  .qualification-btns button {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
+}
