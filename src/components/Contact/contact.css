@@ -52,12 +52,12 @@ input {
 
 @media (min-width: 768px) {
   #contacts {
-    margin: 50px 70px;
+    margin: 100px 70px;
   }
 
   .contact {
     display: flex;
-    gap: 10px;
+    gap: 50px;
     width: 100%;
   }
 
@@ -69,7 +69,7 @@ input {
 
 @media (min-width: 1024px) {
   #contacts {
-    margin: 80px 170px;
+    margin: 190px 170px;
   }
 
   label,
@@ -78,5 +78,9 @@ input {
   .submit-btn,
   .contact p {
     font-size: 22px;
+  }
+
+  .contact div:first-child p {
+    font-size: 18px;
   }
 }

@@ -3,7 +3,9 @@ import projects_data from "../../assets/projects_data";
 import "./projects.css";
 
 const Projects = ({ iconColor }) => {
-  const [showFull, setShowFull] = useState(false);
+  const [showFull, setShowFull] = useState(
+    Array(projects_data.length).fill(false)
+  );
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
@@ -11,6 +13,22 @@ const Projects = ({ iconColor }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleShowMoreDesc = (idx) => {
+    setShowFull((prev) => {
+      const updated = [...prev];
+      updated[idx] = true;
+      return updated;
+    });
+  };
+
+  const handleShowLessDesc = (idx) => {
+    setShowFull((prev) => {
+      const updated = [...prev];
+      updated[idx] = false;
+      return updated;
+    });
+  };
 
   const shortDesc = (desc) => {
     return desc.length > 200 ? desc.slice(0, 200) + "..." : desc;
@@ -59,13 +77,15 @@ const Projects = ({ iconColor }) => {
                   </a>
                 </div>
               </div>
-              <>
-                {isDesktop && proj.proj_desc.length > 200 && !showFull ? (
+              <p className="project-desc">
+                {isDesktop &&
+                proj.proj_desc.length > 200 &&
+                !showFull[index] ? (
                   <>
                     {shortDesc(proj.proj_desc)}
                     <span
                       className="show-more-link"
-                      onClick={() => setShowFull(true)}
+                      onClick={() => handleShowMoreDesc(index)}
                       style={{
                         color: "#3498db",
                         cursor: "pointer",
@@ -78,20 +98,22 @@ const Projects = ({ iconColor }) => {
                 ) : (
                   proj.proj_desc
                 )}
-                {isDesktop && proj.proj_desc.length > 200 && showFull && (
-                  <span
-                    className="show-less-link"
-                    onClick={() => setShowFull(false)}
-                    style={{
-                      color: "#3498db",
-                      cursor: "pointer",
-                      marginLeft: "8px",
-                    }}
-                  >
-                    Show less
-                  </span>
-                )}
-              </>
+                {isDesktop &&
+                  proj.proj_desc.length > 200 &&
+                  showFull[index] && (
+                    <span
+                      className="show-less-link"
+                      onClick={() => handleShowLessDesc(index)}
+                      style={{
+                        color: "#3498db",
+                        cursor: "pointer",
+                        marginLeft: "8px",
+                      }}
+                    >
+                      Show less
+                    </span>
+                  )}
+              </p>
               {/* <p className="project-desc"> */}
 
               <p className="tech-task">{proj.proj_tech}</p>

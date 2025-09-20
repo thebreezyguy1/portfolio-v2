@@ -28,7 +28,7 @@ const Header = ({ iconColor }) => {
             id="download-icon"
             width="48"
             height="48"
-            src="https://img.icons8.com/fluency-systems-regular/48/download--v1.png"
+            src="https://img.icons8.com/fluency-systems-regular/100/FFFFFF/download--v1.png"
             alt="download--v1"
           />
         </a>
@@ -43,13 +43,13 @@ const Header = ({ iconColor }) => {
             className="social-icon"
           >
             <img
-              src={`https://img.icons8.com/windows/${iconColor}/40/instagram-new.png`}
+              src={`https://img.icons8.com/windows/${iconColor}/100/instagram-new.png`}
               alt="instagram"
             />
           </a>
           <a href="https://x.com/thebreezyguy168" className="social-icon">
             <img
-              src={`https://img.icons8.com/material-rounded/${iconColor}/40/twitterx--v2.png`}
+              src={`https://img.icons8.com/material-rounded/${iconColor}/100/twitterx--v2.png`}
               alt="twitter"
             />
           </a>
@@ -58,13 +58,13 @@ const Header = ({ iconColor }) => {
             className="social-icon"
           >
             <img
-              src={`https://img.icons8.com/ios-glyphs/40/${iconColor}/linkedin-2--v1.png`}
+              src={`https://img.icons8.com/ios-glyphs/100/${iconColor}/linkedin-2--v1.png`}
               alt="linkedin"
             />
           </a>
           <a href="https://github.com/thebreezyguy1" className="social-icon">
             <img
-              src={`https://img.icons8.com/ios-glyphs/${iconColor}/40/github.png`}
+              src={`https://img.icons8.com/ios-glyphs/${iconColor}/100/github.png`}
               alt="github"
             />
           </a>

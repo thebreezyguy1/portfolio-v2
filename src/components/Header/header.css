@@ -102,10 +102,11 @@ label {
 
 .resume-button {
   gap: 8px; /* Add spacing between the text and the image */
-  border: 2px solid #80d8c3;
+  background: linear-gradient(267deg, #80d8c3 0.36%, #3498db 102.06%);
   cursor: pointer;
   text-decoration: none;
-  color: #000;
+  color: #fff;
+  padding: 17px 15px;
 }
 
 .resume-button img {
@@ -140,12 +141,16 @@ label {
 
   .resume-button,
   .connect-btn {
-    padding: 20px 60px;
     font-size: 20px;
     border-radius: 50px;
   }
 
+  .connect-btn {
+    padding: 20px 60px;
+  }
+
   .resume-button {
+    padding: 22px 60px;
     white-space: nowrap;
   }
 
@@ -154,7 +159,7 @@ label {
     bottom: 70px;
     margin-right: 20px;
     padding: 20px;
-    right: -20px;
+    right: -40px;
   }
 
   .social-network-inner-container {
@@ -176,9 +181,16 @@ label {
     font-size: 24px;
   }
 
-  .resume-button,
-  .connect-btn {
+  .connect-btn,
+  .resume-button {
     font-size: 22px;
+  }
+
+  .connect-btn {
     padding: 25px 65px;
+  }
+
+  .resume-button {
+    padding: 27px 65px;
   }
 }

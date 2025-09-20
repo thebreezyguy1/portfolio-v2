@@ -20,7 +20,7 @@
 
 @media (min-width: 768px) {
   #about {
-    margin: 50px 70px;
+    margin: 100px 70px;
   }
 
   #about p {
@@ -46,7 +46,7 @@
 
 @media (min-width: 1024px) {
   #about {
-    margin: 80px 170px;
+    margin: 190px 170px;
   }
 
   #about p {

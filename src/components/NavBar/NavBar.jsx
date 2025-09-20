@@ -39,13 +39,13 @@ const NavBar = ({ setIconColor, setContactIconColor }) => {
       container.classList.add("hidden");
       hamburger.setAttribute(
         "src",
-        "https://img.icons8.com/ios-glyphs/40/c2c2c2/hamburger.png"
+        "https://img.icons8.com/ios-glyphs/100/c2c2c2/hamburger.png"
       );
     } else {
       container.classList.remove("hidden");
       hamburger.setAttribute(
         "src",
-        "https://img.icons8.com/ios-glyphs/40/f1c40f/hamburger.png"
+        "https://img.icons8.com/ios-glyphs/100/f1c40f/hamburger.png"
       );
     }
   };
@@ -71,7 +71,7 @@ const NavBar = ({ setIconColor, setContactIconColor }) => {
         <img
           onClick={openMenu}
           className="nav-mob-open"
-          src={"https://img.icons8.com/ios-glyphs/40/f1c40f/hamburger.png"}
+          src={"https://img.icons8.com/ios-glyphs/100/f1c40f/hamburger.png"}
           alt="Open navigation menu"
         />
         <ul ref={menuRef} className="nav-menu">
@@ -80,7 +80,7 @@ const NavBar = ({ setIconColor, setContactIconColor }) => {
             className="nav-mob-close"
             width="30"
             height="30"
-            src="https://img.icons8.com/ios-filled/30/ffffff/delete-sign--v1.png"
+            src="https://img.icons8.com/ios-filled/100/ffffff/delete-sign--v1.png"
             alt="Close navigation menu"
           />
           <li>

@@ -11,21 +11,21 @@ const Contact = ({ contactIconColor }) => {
           <div className="contact-info-container">
             <div className="contact-info">
               <img
-                src={`https://img.icons8.com/material-rounded/30/${contactIconColor}/new-post.png`}
+                src={`https://img.icons8.com/material-rounded/100/${contactIconColor}/new-post.png`}
                 alt="email"
               />
               <p>dtaponzi@students.kennesaw.edu | doriantaponzing@gmail.com</p>
             </div>
             <div className="contact-info">
               <img
-                src={`https://img.icons8.com/ios-glyphs/30/${contactIconColor}/phone--v1.png`}
+                src={`https://img.icons8.com/ios-glyphs/100/${contactIconColor}/phone--v1.png`}
                 alt="phone"
               />
               <p>+1 470-439-9907</p>
             </div>
             <div className="contact-info">
               <img
-                src={`https://img.icons8.com/material-rounded/30/${contactIconColor}/marker.png`}
+                src={`https://img.icons8.com/material-rounded/100/${contactIconColor}/marker.png`}
                 alt="location"
               />
               <p>Lilburn, Georgia, USA</p>
@@ -33,16 +33,19 @@ const Contact = ({ contactIconColor }) => {
           </div>
         </div>
 
-        <form className="contact-form" action="">
-          <label htmlFor="">Name</label>
-          <input type="text" placeholder="Enter your name" />
-          <label htmlFor="">Email</label>
-          <input type="text" placeholder="Enter your email" />
-          <label htmlFor="">Write your message here</label>
+        <form
+          className="contact-form"
+          action="https://formspree.io/f/myzdrody"
+          method="POST"
+        >
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" placeholder="Enter your name" />
+          <label htmlFor="email">Email</label>
+          <input type="text" name="email" placeholder="Enter your email" />
+          <label htmlFor="message">Write your message here</label>
           <textarea
             name="message"
             rows={8}
-            id=""
             placeholder="Write your message here"
           ></textarea>
           <button className="submit-btn">Submit now</button>

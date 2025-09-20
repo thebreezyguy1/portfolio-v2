@@ -45,7 +45,7 @@ button#active {
 
 @media (min-width: 768px) {
   #qualifications {
-    margin: 50px 70px;
+    margin: 100px 70px;
   }
 
   .qualification-btns {
@@ -69,7 +69,7 @@ button#active {
 
 @media (min-width: 1024px) {
   #qualifications {
-    margin: 80px 170px;
+    margin: 190px 170px;
   }
 
   .experience p,
