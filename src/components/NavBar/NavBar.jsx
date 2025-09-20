@@ -8,15 +8,11 @@ const NavBar = ({ setIconColor, setContactIconColor }) => {
   const menuRef = useRef();
 
   const openMenu = () => {
-    if (menuRef.current) {
-      menuRef.current.style.right = "0";
-    }
+    menuRef.current.style.right = "0";
   };
 
   const closeMenu = () => {
-    if (menuRef.current) {
-      menuRef.current.style.right = "-100%";
-    }
+    menuRef.current.style.right = "-100%";
   };
 
   const handleTheme = () => {
@@ -105,6 +101,11 @@ const NavBar = ({ setIconColor, setContactIconColor }) => {
           <li>
             <AnchorLink offset={50} href="#qualifications">
               <p>Qualifications</p>
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink offset={50} href="#projects">
+              <p>Projects</p>
             </AnchorLink>
           </li>
           <li>

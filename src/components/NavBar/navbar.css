@@ -142,7 +142,7 @@
   }
 
   .nav-menu {
-    position: relative;
+    position: static;
     align-items: center;
     list-style: none;
     right: 0;
@@ -152,11 +152,11 @@
   }
 
   .nav-menu li {
-    padding-left: 10px;
+    padding-left: 0;
   }
 
   .nav-menu li p {
-    font-size: 20px;
+    font-size: 16px;
     color: var(--text-color);
   }
 
@@ -170,5 +170,15 @@
 
   .logo {
     width: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-menu {
+    gap: 50px;
+  }
+
+  .nav-menu li p {
+    font-size: 20px;
   }
 }

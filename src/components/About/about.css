@@ -43,3 +43,21 @@
     font-size: 30px;
   }
 }
+
+@media (min-width: 1024px) {
+  #about {
+    margin: 80px 170px;
+  }
+
+  #about p {
+    font-size: 22px;
+  }
+
+  #achievements {
+    flex-direction: row;
+  }
+
+  .achievement {
+    flex: 1 1 calc(25% - 20px);
+  }
+}

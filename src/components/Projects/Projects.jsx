@@ -1,8 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import projects_data from "../../assets/projects_data";
 import "./projects.css";
 
 const Projects = ({ iconColor }) => {
+  const [showFull, setShowFull] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const shortDesc = (desc) => {
+    return desc.length > 200 ? desc.slice(0, 200) + "..." : desc;
+  };
+
   const INITIAL_PROJECTS = 2;
   const [visibleProjects, setVisibleProjects] = useState(INITIAL_PROJECTS);
 
@@ -46,7 +59,41 @@ const Projects = ({ iconColor }) => {
                   </a>
                 </div>
               </div>
-              <p className="project-desc">{proj.proj_desc}</p>
+              <>
+                {isDesktop && proj.proj_desc.length > 200 && !showFull ? (
+                  <>
+                    {shortDesc(proj.proj_desc)}
+                    <span
+                      className="show-more-link"
+                      onClick={() => setShowFull(true)}
+                      style={{
+                        color: "#3498db",
+                        cursor: "pointer",
+                        marginLeft: "8px",
+                      }}
+                    >
+                      Show more
+                    </span>
+                  </>
+                ) : (
+                  proj.proj_desc
+                )}
+                {isDesktop && proj.proj_desc.length > 200 && showFull && (
+                  <span
+                    className="show-less-link"
+                    onClick={() => setShowFull(false)}
+                    style={{
+                      color: "#3498db",
+                      cursor: "pointer",
+                      marginLeft: "8px",
+                    }}
+                  >
+                    Show less
+                  </span>
+                )}
+              </>
+              {/* <p className="project-desc"> */}
+
               <p className="tech-task">{proj.proj_tech}</p>
             </div>
           ))}

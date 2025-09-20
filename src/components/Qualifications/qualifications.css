@@ -57,4 +57,28 @@ button#active {
     padding: 15px 30px;
     font-size: 20px;
   }
+
+  .skills {
+    justify-content: center;
+  }
+
+  .skills img {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #qualifications {
+    margin: 80px 170px;
+  }
+
+  .experience p,
+  .education p {
+    font-size: 20px;
+  }
+
+  .skills {
+    row-gap: 50px;
+    justify-content: center;
+  }
 }

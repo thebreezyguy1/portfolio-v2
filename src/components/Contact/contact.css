@@ -61,8 +61,22 @@ input {
     width: 100%;
   }
 
-  .contact div {
-    width: 100%;
-    max-width: 50%;
+  .contact > * {
+    flex: 1 1 50%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  #contacts {
+    margin: 80px 170px;
+  }
+
+  label,
+  input,
+  textarea,
+  .submit-btn,
+  .contact p {
+    font-size: 22px;
   }
 }

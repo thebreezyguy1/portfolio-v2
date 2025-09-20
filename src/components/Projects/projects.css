@@ -161,10 +161,6 @@
     margin: 50px 70px;
   }
 
-  .projects-container img {
-    height: 100%;
-  }
-
   .project-desc,
   .tech-task {
     font-size: 20px;
@@ -174,5 +170,26 @@
   .tech-task {
     margin-top: 10px;
     font-weight: 600;
+  }
+}
+
+@media (min-width: 1024px) {
+  #projects {
+    margin: 80px 170px;
+  }
+
+  .projects-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  .project {
+    flex: 1 1 calc(50% - 50px);
+    max-width: calc(50% - 50px);
+  }
+
+  .project-title {
+    text-align: center;
   }
 }
