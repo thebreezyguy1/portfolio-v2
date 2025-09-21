@@ -6,7 +6,7 @@ const Contact = ({ contactIconColor }) => {
       <h1 className="section-title">Let's connect</h1>
       <div className="contact">
         <div>
-          <p>I am available for 2025 New Grade roles.</p>
+          <p>I am available for 2025 New Grad roles.</p>
           <p>Connect with me through email or phone.</p>
           <div className="contact-info-container">
             <div className="contact-info">
